@@ -1,0 +1,68 @@
+@use "_generalSetup";
+@use "_animations";
+@import "variables";
+
+header{
+    display: grid;
+    justify-items: center;
+    > #logo{
+        width: 90px;
+        border-radius: 50%;
+    }
+    h5{
+    position: relative;
+    top: -60%
+    }
+    nav > a{
+        text-decoration: none;
+        font-size: 1.3em;
+        padding: 5px;
+        border: 1px solid #a7abff;
+        background-color: #e3faf4;
+        color: #B6B8D6;
+    }
+    nav{
+        margin-bottom: 40px;
+    }
+}
+
+a:active{
+    animation: navSizeAnimation .5s ease-in;
+}
+
+#logo:active{
+    animation: sizeAnimation 1s ease-in;
+}
+
+article{
+    display: grid;
+    justify-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #445e57;
+    padding: 7px;
+    transition: background-color 1s linear;
+    &:active{
+        background-color: #BBDBD1;
+    }
+    h2{
+        text-align: center;
+        color: $article-font-color;
+    }
+    img{
+        width: $article-image-size;
+    }
+    p{
+        text-align: center;
+        position: relative;
+        top: -30px;
+        color: $article-font-color;
+    }
+}
+
+// Desktop Rules 
+@media only screen and (min-width: 1000px){
+    article img{
+        width: $article-image-size-dt;
+    }
+}
